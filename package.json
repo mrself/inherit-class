@@ -1,0 +1,19 @@
+{
+  "name": "inherit-class",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yaroslav Vavrysh <yaruk.my@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "clone": "^2.1.0",
+    "extend": "^3.0.0"
+  }
+}
