@@ -22,6 +22,13 @@ describe('Copy static props', function() {
 		inherit(F1, F2, 'f2');
 		expect(F1.prop).to.eql(0);
 	});
+
+	it('extend objects', function() {
+		F1.prop = {prop1: '1'};
+		F2.prop = {prop2: '2'};
+		inherit(F1, F2, 'f2');
+		expect(F1.prop).to.eql({prop1: '1', prop2: '2'});
+	});
 });
 
 describe('Copy prototype', function() {
