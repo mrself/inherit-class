@@ -19,6 +19,7 @@
   "dependencies": {
     "clone": "^2.1.0",
     "extend": "^3.0.0",
-    "is-plain-object": "^2.0.1"
+    "is-plain-object": "^2.0.1",
+    "js-helpers": "github:mrself/js-helpers#v1.2.0"
   }
 }

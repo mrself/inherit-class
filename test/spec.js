@@ -29,6 +29,39 @@ describe('Copy static props', function() {
 		inherit(F1, F2, 'f2');
 		expect(F1.prop).to.eql({prop1: '1', prop2: '2'});
 	});
+
+
+	describe('Merge arrays pointed in ._extendArrayNames', function() {
+		it('merge arrays', function() {
+			F1.array = [2];
+			F2.array = [1];
+			F2._extendArrayNames = ['array'];
+			inherit(F1, F2, 'f2');
+			expect(F1.array).to.eql([1, 2]);
+		});
+
+		it('merge arrays with multilevel path', function() {
+			F1.defaults = {array: [2]};
+			F2.defaults = {array: [1]};
+			F2._extendArrayNames = ['defaults.array'];
+			inherit(F1, F2, 'f2');
+			expect(F1.defaults.array).to.eql([1, 2]);
+		});
+
+		it('do nothing if parent does not have needed prop', function() {
+			F1.array = [2];
+			F2._extendArrayNames = ['array'];
+			inherit(F1, F2, 'f2');
+			expect(F1.array).to.eql([2]);
+		});
+
+		it('copy parent if child does not have the same prop', function() {
+			F2.array = [2];
+			F2._extendArrayNames = ['array'];
+			inherit(F1, F2, 'f2');
+			expect(F1.array).to.eql([2]);
+		});
+	});
 });
 
 describe('Copy prototype', function() {
