@@ -1,20 +1,26 @@
 {
   "name": "inherit-class",
-  "version": "1.1.2",
+  "version": "1.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/gulp test.once",
+    "postversion": "git checkout master && git merge develop && git push && git push --tags && git checkout develop"
   },
   "author": "Yaroslav Vavrysh <yaruk.my@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^5.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-watch": "^5.0.0",
     "mocha": "^3.2.0"
   },
   "dependencies": {
     "clone": "^2.1.0",
     "extend": "^3.0.0",
-    "is-plain-object": "^2.0.1"
+    "is-plain-object": "^2.0.1",
+    "js-helpers": "github:mrself/js-helpers#v1.2.0"
   }
 }
