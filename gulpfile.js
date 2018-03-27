@@ -15,7 +15,7 @@ gulp.task('test.once', function () {
 
 gulp.task('test.watch', function () {
 	gulp.start('test.once');
-	watch(['src/**/*.js', 'test/**/*.js'], function () {
+	watch(['index.js', 'test/**/*.js'], function () {
 		gulp.start('test.once');
 	});
 });
